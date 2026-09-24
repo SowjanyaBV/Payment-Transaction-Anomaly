@@ -108,32 +108,31 @@ The models were evaluated using:
 
 ## Model Results
 
+Two foundational machine learning models were evaluated using the test dataset.
+
 ### Logistic Regression
 
 | Metric | Score |
 |---|---:|
-| Accuracy | 99.79% |
-| Precision | 70.00% |
-| Recall | 77.78% |
-| F1-score | 73.68% |
-| ROC-AUC | 0.9922 |
+| Accuracy | 99.91% |
+| Precision | 82.67% |
+| Recall | 63.27% |
+| F1-score | 71.68% |
+| ROC-AUC | 0.9605 |
 
 ### Decision Tree
 
 | Metric | Score |
 |---|---:|
-| Accuracy | 99.83% |
-| Precision | 72.73% |
-| Recall | 88.89% |
-| F1-score | 80.00% |
-| ROC-AUC | 0.9438 |
+| Accuracy | 99.94% |
+| Precision | 89.02% |
+| Recall | 74.49% |
+| F1-score | 81.11% |
+| ROC-AUC | 0.8095 |
 
-The Decision Tree was selected as the final model for the prototype
-because it achieved higher recall and F1-score on the test set.
+The Decision Tree was selected as the final model for the Streamlit prototype because it achieved higher accuracy, precision, recall, and F1-score on the current test split.
 
-Logistic Regression achieved a higher ROC-AUC, which is also considered
-when interpreting the results.
-
+Logistic Regression achieved a higher ROC-AUC, which is also considered when interpreting the model results.
 ---
 
 ## Error Analysis
@@ -174,23 +173,21 @@ or
 **Anomalous / Fraudulent Transaction**
 
 ---
-
 ## Project Structure
 
 ```text
 Payment-Transaction-Anomaly/
 │
-├── app/
-├── data/
-│   └── archive (1)/
-│       └── creditcard.csv
 ├── models/
-├── notebooks/
-├── paper/
+│   ├── decision_tree_model.pkl
+│   ├── feature_names.pkl
+│   └── scaler.pkl
 │
-├── decision_tree_model.pkl
-├── scaler.pkl
-├── feature_names.pkl
+├── notebooks/
+│   └── Payment_Transaction_Anomaly_Classification.ipynb
+│
 ├── app.py
+├── test_model.py
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
